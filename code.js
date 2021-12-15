@@ -28,6 +28,7 @@ function getWeather() {
 
 
 	        document.getElementById("image").setAttribute('src', weather.current.condition.icon)
+            
 	     
 	 }
     };
