@@ -24,7 +24,9 @@ function getWeather() {
     xhttp.onreadystatechange = function() {
 	 if (this.readyState == 4 && this.status == 200) {
          let weather=JSON.parse(this.response)
-            document.querySelector("span").innerHTML="The weather of "+weather.location.name+", the tempature is "+weather.current.temp_c+" celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
+            document.querySelector("span").innerText="The weather of "+weather.location.name+", the temperature is "+weather.current.temp_c+" celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
+
+
 	        document.getElementById("image").setAttribute('src', weather.current.condition.icon)
 	     
 	 }
