@@ -13,6 +13,7 @@ div, p{
     height: 15rem;
     border: 3px solid black;
     border-radius: 5px;
+    font-weight: bold;
 }
 footer{
     background-color:#D6A3BE ;
@@ -24,5 +25,26 @@ footer{
 body{
     background: rgb(103,43,102);
     background: linear-gradient(90deg, rgba(103,43,102,1) 0%, rgba(236,192,237,1) 48%, rgba(122,107,148,1) 98%);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Montserrat-ExtraLight;
 }
+#joke, #weather{
+    margin: 1,5vw;
+    width: 30vw;
+    height: 9vw;    
+    border: 2px solid black;
+    border-radius: 4px;
+}
+#textarea{
+    margin: 1vw;
+    background-color: #f7bcbe10;
+    display: flex;
+    justify-content: space-evenly;
+    border: 0px;
+}
+#image{
+    size: 3vh;
+}
+@font-face {
+    font-family: Montserrat-ExtraLight;
+    src: url(suunnittelu/Montserrat-ExtraLight.ttf);
+  }
