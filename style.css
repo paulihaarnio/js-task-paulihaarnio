@@ -1,0 +1,28 @@
+header{
+    background-color: #d6bcf77a;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.596);
+}
+#teksti{
+    height: 7rem;
+}
+div, p{
+    background-color: #f7bcbe6c;
+    height: 15rem;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+footer{
+    background-color:#D6A3BE ;
+    margin-top: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 2rem;
+}
+body{
+    background: rgb(103,43,102);
+    background: linear-gradient(90deg, rgba(103,43,102,1) 0%, rgba(236,192,237,1) 48%, rgba(122,107,148,1) 98%);
+    font-family: Arial, Helvetica, sans-serif;
+}
