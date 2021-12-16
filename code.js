@@ -27,7 +27,19 @@ function getWeather() {
          let temp=weather.current.temp_c
             document.querySelector("span").innerText="The weather of "+weather.location.name+", the temperature is "+temp+" celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
             if(temp<5){
-                document.querySelector("span").innerText+="It's a bit cold outside"
+                document.querySelector("span").innerText+=" It's a bit cold outside"
+            }
+            else if(temp<10){
+                document.querySelector("span").innerText+=" You should put a jacket on"
+            }else if(temp<15){
+                document.querySelector("span").innerText+=" Perfect hoodie weather"
+            }
+            else if(temp<20){
+                document.querySelector("span").innerText+=" It's getting warmer"
+            }else if(temp<25){
+                document.querySelector("span").innerText+=" Almost summer"
+            }else if(temp>=25){
+                document.querySelector("span").innerText+=" Get your sun cream and go to the beach "
             }
 
 	        document.getElementById("image").setAttribute('src', weather.current.condition.icon)
