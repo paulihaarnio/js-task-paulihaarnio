@@ -24,8 +24,11 @@ function getWeather() {
     xhttp.onreadystatechange = function() {
 	 if (this.readyState == 4 && this.status == 200) {
          let weather=JSON.parse(this.response)
-            document.querySelector("span").innerText="The weather of "+weather.location.name+", the temperature is "+weather.current.temp_c+" celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
-
+         let temp=weather.current.temp_c
+            document.querySelector("span").innerText="The weather of "+weather.location.name+", the temperature is "+temp+" celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
+            if(temp<5){
+                document.querySelector("span").innerText+="It's a bit cold outside"
+            }
 
 	        document.getElementById("image").setAttribute('src', weather.current.condition.icon)
             
@@ -35,20 +38,20 @@ function getWeather() {
     if(document.getElementById("oulu").selected==true){
     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Oulu&aqi=no", true);
     xhttp.send();}
-    else if(document.getElementById("helsinki").selected==true){
-    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Helsinki&aqi=no", true);
+    else if(document.getElementById("oslo").selected==true){
+    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Oslo&aqi=no", true);
     xhttp.send();}
-    else if(document.getElementById("tampere").selected==true){
-    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Tampere&aqi=no", true);
+    else if(document.getElementById("sydney").selected==true){
+    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Sydney&aqi=no", true);
     xhttp.send();}
-    else if(document.getElementById("lahti").selected==true){
-     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Lahti&aqi=no", true);
+    else if(document.getElementById("marbella").selected==true){
+     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Marbella&aqi=no", true);
      xhttp.send();}
-    else if(document.getElementById("turku").selected==true){
-     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512q=Turku&aqi=no", true);
+    else if(document.getElementById("london").selected==true){
+     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=London&aqi=no", true);
      xhttp.send();}
-    else if(document.getElementById("rovaniemi").selected==true){
-     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Rovaniemi&aqi=no", true);
+    else if(document.getElementById("dubai").selected==true){
+     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Dubai&aqi=no", true);
      xhttp.send();}
 }
 
