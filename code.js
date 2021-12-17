@@ -48,22 +48,22 @@ function getWeather() {
 	 }
     };
     if(document.getElementById("oulu").selected==true){
-    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Oulu&aqi=no", true);
+    xhttp.open("GET", "https://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Oulu&aqi=no", true);
     xhttp.send();}
     else if(document.getElementById("oslo").selected==true){
-    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Oslo&aqi=no", true);
+    xhttp.open("GET", "https://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Oslo&aqi=no", true);
     xhttp.send();}
     else if(document.getElementById("sydney").selected==true){
-    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Sydney&aqi=no", true);
+    xhttp.open("GET", "https://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Sydney&aqi=no", true);
     xhttp.send();}
     else if(document.getElementById("marbella").selected==true){
-     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Marbella&aqi=no", true);
+     xhttp.open("GET", "https://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Marbella&aqi=no", true);
      xhttp.send();}
     else if(document.getElementById("london").selected==true){
-     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=London&aqi=no", true);
+     xhttp.open("GET", "https://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=London&aqi=no", true);
      xhttp.send();}
     else if(document.getElementById("dubai").selected==true){
-     xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Dubai&aqi=no", true);
+     xhttp.open("GET", "https://api.weatherapi.com/v1/current.json?key=bc44c2be4a8948448c882920211512&q=Dubai&aqi=no", true);
      xhttp.send();}
 }
 
