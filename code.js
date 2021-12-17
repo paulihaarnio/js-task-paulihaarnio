@@ -26,7 +26,16 @@ function getWeather() {
          let weather=JSON.parse(this.response)
          let temp=weather.current.temp_c
             document.querySelector("span").innerText="The weather of "+weather.location.name+", the temperature is "+temp+" celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
-            if(temp<5){
+            if(temp<-15){
+                document.querySelector("span").innerText+=" Watch out for the frostbites!"
+            }
+            else if(temp<-5){
+                document.querySelector("span").innerText+=" Best time for skiing!"
+            }
+            else if(temp<0){
+                document.querySelector("span").innerText+=" Don't forget your scarf."
+            }
+            else if(temp<5){
                 document.querySelector("span").innerText+=" It's a bit cold outside"
             }
             else if(temp<10){
