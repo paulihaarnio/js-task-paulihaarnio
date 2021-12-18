@@ -24,7 +24,10 @@ footer{
     margin-top: 10px;
     border: 3px solid black;
     border-radius: 5px;
-    height: 2rem;
+    height: 2rem; font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0px 10px 10px rgba(51, 3, 39, 0.815);
 }
 body{
     background: rgb(103,43,102);

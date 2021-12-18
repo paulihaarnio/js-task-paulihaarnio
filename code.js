@@ -3,9 +3,9 @@ function get_joke_of_the_day() {
     xhttp.onreadystatechange = function() {
 	 if (this.readyState == 4 && this.status == 200) {
          let joke=JSON.parse(this.response)
-	  
-	     document.getElementById("joke").innerHTML=joke.contents.jokes[0].joke.text+"<br>"
-         document.getElementById("joke").innerHTML+="credits to "+joke.contents.copyright+"&copy;"
+         let jokeText=document.getElementById("joke")
+	     jokeText.innerHTML=joke.contents.jokes[0].joke.text+"<br>"
+         jokeText.innerHTML+="credits to "+joke.contents.copyright+"&copy;"
 	 }
     };
     if(document.getElementById("blonde").selected==true){
@@ -19,36 +19,42 @@ function get_joke_of_the_day() {
     xhttp.send();}
 }
 
+
+
 function getWeather() {
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
 	 if (this.readyState == 4 && this.status == 200) {
          let weather=JSON.parse(this.response)
          let temp=weather.current.temp_c
-            document.querySelector("span").innerText="The weather of "+weather.location.name+", the temperature is "+temp+" celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
+         let text=document.querySelector("span")
+            text.innerText="The weather of "+weather.location.name+", the temperature is "+temp+" degrees celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
             if(temp<-15){
-                document.querySelector("span").innerText+=" Watch out for the frostbites!"
+                text.innerText+=" Watch out for the frostbites!"
             }
             else if(temp<-5){
-                document.querySelector("span").innerText+=" Best time for skiing!"
+                text.innerText+=" Best time for skiing!"
             }
             else if(temp<0){
-                document.querySelector("span").innerText+=" Don't forget your scarf."
+                text.innerText+=" Don't forget your scarf."
             }
             else if(temp<5){
-                document.querySelector("span").innerText+=" It's a bit cold outside"
+                text.innerText+=" It's a bit cold outside"
             }
             else if(temp<10){
-                document.querySelector("span").innerText+=" You should put a jacket on"
-            }else if(temp<15){
-                document.querySelector("span").innerText+=" Perfect hoodie weather"
+                text.innerText+=" You should put a jacket on"
+            }
+            else if(temp<15){
+                text.innerText+=" Perfect hoodie weather"
             }
             else if(temp<20){
-                document.querySelector("span").innerText+=" It's getting warmer"
-            }else if(temp<25){
-                document.querySelector("span").innerText+=" Almost summer"
-            }else if(temp>=25){
-                document.querySelector("span").innerText+=" Get your sun cream and go to the beach "
+                text.innerText+=" It's getting warmer"
+            }
+            else if(temp<25){
+                text.innerText+=" Almost summer"
+            }
+            else if(temp>=25){
+                text.innerText+=" Get your sun cream and go to the beach "
             }
 
 	        document.getElementById("image").setAttribute('src', weather.current.condition.icon)
@@ -77,15 +83,11 @@ function getWeather() {
 }
 
 function tyhjennä(){
-    document.querySelector("span").innerHTML="The weather comes here"
-    document.getElementById("joke").innerHTML="The joke comes here"
+    text.innerHTML="The weather comes here"
+    jokeText.innerHTML="The joke comes here"
     document.getElementById("image").setAttribute('src', "")
 }
-
 document.querySelector("button").addEventListener("click", getWeather)
-
-
 document.getElementById("printjoke").addEventListener("click", get_joke_of_the_day)
-
 document.getElementById("tyhjennys").addEventListener("click", tyhjennä )
 
