@@ -3,7 +3,7 @@ function get_joke_of_the_day() {
     xhttp.onreadystatechange = function() {
 	 if (this.readyState == 4 && this.status == 200) {
          let joke=JSON.parse(this.response)
-         let jokeText=document.getElementById("joke")
+         jokeText=document.getElementById("joke")
 	     jokeText.innerHTML=joke.contents.jokes[0].joke.text+"<br>"
          jokeText.innerHTML+="credits to "+joke.contents.copyright+"&copy;"
 	 }
@@ -27,7 +27,7 @@ function getWeather() {
 	 if (this.readyState == 4 && this.status == 200) {
          let weather=JSON.parse(this.response)
          let temp=weather.current.temp_c
-         let text=document.querySelector("span")
+         text=document.querySelector("span")
             text.innerText="The weather of "+weather.location.name+", the temperature is "+temp+" degrees celcius and the wind is "+Math.floor(weather.current.wind_kph*0.28)+" meters per second"
             if(temp<-15){
                 text.innerText+=" Watch out for the frostbites!"
@@ -83,8 +83,8 @@ function getWeather() {
 }
 
 function tyhjennä(){
-    text.innerHTML="The weather comes here"
-    jokeText.innerHTML="The joke comes here"
+    text.innerText="The weather comes here"
+    jokeText.innerText="The joke comes here"
     document.getElementById("image").setAttribute('src', "")
 }
 document.querySelector("button").addEventListener("click", getWeather)
